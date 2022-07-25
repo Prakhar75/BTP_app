@@ -4,12 +4,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:btp/mainpage.dart';
-//import 'package:mycovid/mynumber.dart';
-// import 'package:mycovid/otp.dart';
+
 import 'dart:convert';
-// import 'package:dio/dio.dart';
-//import 'package:mycovid/mynumber.dart';
-//import 'package:mycovid/api_provider.dart';
+
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -17,41 +14,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _MyState extends State<LoginScreen> {
-  // WELCOME and login page
+  
   TextEditingController passController = new TextEditingController();
-  // String cookie;
-  // String status = "success";
-  // String hash;
-
-  //List<mynumber> mylogin = [];
-  //var list = new List(3);
-
-  // Dio dio = new Dio();
-
-  // Future postNum() async {
-  //   final String Url = 'https://my-covid-hospital-api.herokuapp.com/login';
-
-    // dynamic num = {"phone": int.parse(passController.text)};
-    // var response = await dio.post(Url,
-    //     data: num,
-    //     options: Options(
-    //       headers: {'content-type': 'application/json; charset=UTF-8'},
-    //     ));
-    // /*mylogin.add(new mynumber(response.data["status"], response.data["message"],
-    //     response.data["data"]["hash"], passController.text));
-    // print(mylogin);*/
-    // status = response.data["status"];
-    // if (status == "success") {
-    //   hash = response.data["data"]["hash"];
-    // }
-
-  //   print(response.headers);
-  //   //print(response.data.toString().substring(9, 16));
-  //   //status = response.data.toString().substring(9, 16);
-  //   print(response.headers.map['set-cookie'][0].split(';')[0].substring(12));
-  //   cookie = response.headers.map['Set-Cookie'][0].split(';')[0].substring(12);
-  //   return response.data;
-  // }
+  
 
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -83,7 +48,7 @@ class _MyState extends State<LoginScreen> {
               'assets/images/lnmiit.png'),
           fit: BoxFit.fill,
         ),
-        // shape: BoxShape.circle,
+      
       ),
     ),
               Padding(
@@ -121,22 +86,7 @@ class _MyState extends State<LoginScreen> {
                   color: Colors.teal.shade100,
                 ),
               ),
-              /*Card(
-                margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.healing,
-                    color: Colors.teal,
-                  ),
-                  title: Text(
-                    'hospitalemail@gmail.com',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.teal.shade900,
-                    ),
-                  ),
-                ),
-              ),*/
+              
               Container(
                   padding: const EdgeInsets.all(30.0),
                   child: Form(
@@ -153,11 +103,9 @@ class _MyState extends State<LoginScreen> {
                               controller: passController,
                               decoration: InputDecoration(
                                 labelText: "Enter Your e-mail",
-                                //errorText: error_text_message()
-                                //? "number not registered"
-                                //: null,
+                          
                               ),
-                              // obscureText: true,
+                              
                               keyboardType: TextInputType.emailAddress,
                             ),
                             Padding(
@@ -173,17 +121,12 @@ class _MyState extends State<LoginScreen> {
                 textColor: Colors.white,
                 child: Text('Enter'),
                 onPressed: () async {
-                  //error_text(passController.text);
-                  //print(status);
+      
                   if ((passController.text).length <10) {
                     print('object is not correct email format................');
-                    //showAlertDialog(context);
+                
                   } else {
-                    // await postNum();
-                    // print(status);
-                    
-                    // if (status == "success") {
-                      // showAlertDialog(context);
+                 
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -191,10 +134,7 @@ class _MyState extends State<LoginScreen> {
                               dashb("null", "Prakhar"),
                         ),
                       );
-                    // } else {
-                    //   //passController.text = "invalid number";
-                    //   // showAlertDialog(context);
-                    // }
+           
                   }
                 },
                 splashColor: Colors.tealAccent,

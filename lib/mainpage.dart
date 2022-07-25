@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:dio/dio.dart';
 import 'package:btp/login.dart';
-// import 'dashboard.dart';
-// import 'form.dart';
-// import 'formd.dart';
-// import 'wards.dart';
+
+import 'form.dart';
+import'subjects.dart';
+
 
 class dashb extends StatefulWidget {
   final String cookie;
@@ -15,7 +14,7 @@ class dashb extends StatefulWidget {
 }
 
 class _HomePageState extends State<dashb> {
-  // final dio = new Dio(); // for http requests
+  
 
   Icon _searchIcon = new Icon(Icons.search);
   final String cookie;
@@ -23,10 +22,10 @@ class _HomePageState extends State<dashb> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.grey[850],
       appBar: AppBar(
           automaticallyImplyLeading: true,
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: Colors.blueGrey,
           title: Text("LNMIIT attendance app"),
           leading: BackButton(
             //icon: Icon(Icons.Back),
@@ -62,7 +61,7 @@ class _HomePageState extends State<dashb> {
                 Text(
                   "Select an option ",
                   style: TextStyle(
-                      color: Colors.grey[700],
+                      color: Colors.grey[500],
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
@@ -76,20 +75,20 @@ class _HomePageState extends State<dashb> {
             child: Container(
               child: new FittedBox(
                 child: Material(
-                  color: Colors.grey[700],
+                  color: Colors.grey[400],
                   elevation: 14.0,
                   borderRadius: BorderRadius.circular(24.0),
                   shadowColor: Color(0x802196F3),
                   child: new InkWell(
-                      // onTap: () {
-                      //   //  print("tapped");
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             dash(cookie, widget.doc_name)),
-                      //   );
-                      // },
+                      onTap: () {
+                        //  print("tapped");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  cards("null", "Prakhar")),
+                        );
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -123,20 +122,20 @@ class _HomePageState extends State<dashb> {
             child: Container(
               child: new FittedBox(
                 child: Material(
-                  color: Colors.grey[700],
+                  color: Colors.grey[400],
                   elevation: 14.0,
                   borderRadius: BorderRadius.circular(24.0),
                   shadowColor: Color(0x802196F3),
                   child: new InkWell(
-                      // onTap: () {
-                      //   //  print("tapped");
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             FormScreen(cookie, widget.doc_name)),
-                      //   );
-                      // },
+                      onTap: () {
+                        //  print("tapped");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  FormScreen("null", "Prakhar")),
+                        );
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -170,7 +169,7 @@ class _HomePageState extends State<dashb> {
             child: Container(
               child: new FittedBox(
                 child: Material(
-                  color: Colors.grey[700],
+                  color: Colors.grey[400],
                   elevation: 14.0,
                   borderRadius: BorderRadius.circular(24.0),
                   shadowColor: Color(0x802196F3),
@@ -181,7 +180,7 @@ class _HomePageState extends State<dashb> {
                       //     context,
                       //     MaterialPageRoute(
                       //         builder: (context) =>
-                      //             wards(cookie, widget.doc_name)),
+                      //             QRViewExample()),
                       //   );
                       // },
                       child: Row(
@@ -217,20 +216,12 @@ class _HomePageState extends State<dashb> {
             child: Container(
               child: new FittedBox(
                 child: Material(
-                  color: Colors.grey[700],
+                  color: Colors.grey[400],
                   elevation: 14.0,
                   borderRadius: BorderRadius.circular(24.0),
                   shadowColor: Color(0x802196F3),
                   child: new InkWell(
-                      // onTap: () {
-                      //   //  print("tapped");
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             FormScreend(cookie, widget.doc_name)),
-                      //   );
-                      // },
+                      
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -259,47 +250,13 @@ class _HomePageState extends State<dashb> {
             ),
           ),
 
-          // Padding(
-          //   padding: const EdgeInsets.all(16.0),
-          //   child: Container(
-          //     child: new FittedBox(
-          //       child: Material(
-          //           color: Colors.grey[200],
-          //           elevation: 14.0,
-          //           borderRadius: BorderRadius.circular(24.0),
-          //           shadowColor: Color(0x802196F3),
-          //           child: Row(
-          //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //             children: <Widget>[
-          //               Container(
-          //                 child: Padding(
-          //                   padding: const EdgeInsets.only(left: 16.0),
-          //                   child: myDetailsContainer5(),
-          //                 ),
-          //               ),
-          //               Container(
-          //                 width: 250,
-          //                 height: 150,
-          //                 child: ClipRRect(
-          //                   borderRadius: new BorderRadius.circular(24.0),
-          //                   child: Image(
-          //                     fit: BoxFit.contain,
-          //                     alignment: Alignment.topRight,
-          //                     image: AssetImage("assets/images/qr.png"),
-          //                   ),
-          //                 ),
-          //               ),
-          //             ],
-          //           )),
-          //     ),
-          //   ),
-          // ),
+          
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
               child: new FittedBox(
                 child: Material(
-                    color: Colors.grey[700],
+                    color: Colors.grey[400],
                     elevation: 14.0,
                     borderRadius: BorderRadius.circular(24.0),
                     shadowColor: Color(0x802196F3),
@@ -442,34 +399,7 @@ class _HomePageState extends State<dashb> {
     );
   }
 
-  // Widget myDetailsContainer5() {
-  //   return Column(
-  //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //     children: <Widget>[
-  //       Padding(
-  //         padding: const EdgeInsets.only(left: 8.0),
-
-  //           child: Container(
-  //               child: Text(
-  //             "Scan QR",
-  //             style: TextStyle(
-  //                 color: Colors.cyan[800],
-  //                 fontSize: 24.0,
-  //                 fontWeight: FontWeight.bold),
-  //           )),
-  //         ),
-
-  //       Container(
-  //           child: Text(
-  //         "Tap to scan QR code",
-  //         style: TextStyle(
-  //           color: Colors.black54,
-  //           fontSize: 18.0,
-  //         ),
-  //       )),
-  //     ],
-  //   );
-  // }
+  
 
   Widget myDetailsContainer6() {
     return Column(
@@ -501,8 +431,8 @@ class _HomePageState extends State<dashb> {
   Widget _buildBar(BuildContext context) {
     return new AppBar(
       centerTitle: true,
-      backgroundColor: Colors.deepOrange,
-      title: Text("MyCovid App"),
+      backgroundColor: Colors.brown[600],
+      title: Text("LNMIIT"),
     );
   }
 }
